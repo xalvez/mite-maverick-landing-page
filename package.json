@@ -1,8 +1,8 @@
 {
-  "name": "meetly-frontend",
+  "name": "nanonexus",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://xalvez.github.io/Nano_Nexus_Landing_page",
+  "homepage": "https://xalvez.github.io/nano_nexus_land_page",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
