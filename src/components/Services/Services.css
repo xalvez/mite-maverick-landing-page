@@ -69,7 +69,7 @@
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(4, 250px);
   gap: 2rem;
   margin-bottom: 4rem;
 }
@@ -122,7 +122,7 @@
 
 .service-description {
   font-family: var(--font-body);
-  color: var(--text-secondary);
+     color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 2rem;
   font-size: 1rem;
@@ -177,11 +177,11 @@
 .card-3d:hover .service-glow {
   opacity: 1;
 }
-
+   
 /* 3D Button Content */
 .button-3d-content {
   position: relative;
-  z-index: 2;
+  z-index: 400;
 }
 
 .service-card:hover .service-glow {
@@ -215,6 +215,7 @@
 .services-cta.visible {
   opacity: 1;
   transform: translate3d(0, 0, 0);
+  border-radius: 200px;
 }
 
 @media (max-width: 768px) {

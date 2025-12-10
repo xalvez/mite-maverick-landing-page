@@ -5,6 +5,11 @@
   overflow: hidden;
 }
 
+.section-title-fixed{
+  position: relative;
+  left: 40%;
+}
+
 /* Animated Background Elements */
 .animated-bg-elements {
   position: absolute;
@@ -103,7 +108,9 @@
   background-clip: text;
 }
 
-.section-subtitle {
+.section-subtitle-About {
+  position: relative;
+  left: 32%;
   font-family: var(--font-body);
   font-size: 1.3rem;
   color: var(--text-secondary);
@@ -133,7 +140,7 @@
 /* About Content Layout */
 .about-content {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  /* grid-template-columns: 2fr 1fr; */
   gap: 4rem;
   align-items: start;
   position: relative;
@@ -145,7 +152,7 @@
   flex-direction: column;
   gap: 3rem;
 }
-
+  
 .about-text {
   opacity: 0;
   transform: translate3d(-50px, 0, 0);
@@ -227,20 +234,20 @@
 
 /* Stats Section */
 .stats-section {
-  margin-top: 2rem;
+  margin-top: -10rem;
 }
 
 .stats-section h4 {
   font-family: var(--font-heading);
   color: var(--text-primary);
-  margin-bottom: 2rem;
+  margin-bottom: 6rem;
   font-size: 1.5rem;
   text-align: center;
 }
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
 }
 
@@ -290,9 +297,9 @@
   font-size: 0.9rem;
   font-weight: 500;
 }
-
+    
 /* Features Section */
-.features-section {
+/* .features-section {
   margin-bottom: 3rem;
 }
 
@@ -352,7 +359,7 @@
   margin: 0;
   font-size: 0.95rem;
   line-height: 1.6;
-}
+} */
 
 /* Gradient Backgrounds for Feature Cards */
 .gradient-1::after {
@@ -362,13 +369,13 @@
 .gradient-2::after {
   background: linear-gradient(135deg, rgba(106, 123, 179, 0.1), rgba(139, 155, 214, 0.1));
 }
-
+   
 .gradient-3::after {
   background: linear-gradient(135deg, rgba(139, 155, 214, 0.1), rgba(165, 180, 252, 0.1));
 }
 
 /* Technology Stack */
-.tech-stack {
+/* .tech-stack {
   opacity: 0;
   transform: translate3d(50px, 0, 0);
   transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -449,11 +456,11 @@
   bottom: 0;
   background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
   animation: gradientShift 2s ease infinite;
-}
+} */
 
 /* Call to Action */
 .about-cta {
-  margin-top: -6rem;
+  margin-top: -30rem;
   text-align: center;
   opacity: 0;
   transform: translate3d(0, 40px, 0);
@@ -469,7 +476,7 @@
 .cta-content {
   background: linear-gradient(135deg, var(--bg-primary), var(--bg-secondary));
   padding: 3rem;
-  border-radius: 30px;
+  border-radius: 300px;
   border: 1px solid var(--border-color);
   position: relative;
   overflow: hidden;
@@ -615,7 +622,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 80%;
+  height: 100%;
   pointer-events: none;
   z-index: 1;
 }
@@ -625,7 +632,7 @@
   top: 50%;
   left: 50%;
   width: 80%;
-  height: 95%;
+  height: 80%;
   background: linear-gradient(135deg, 
     rgba(92, 107, 156, 0.05), 
     rgba(106, 123, 179, 0.03), 
@@ -826,7 +833,173 @@
 
 
 
+/* Mobile-specific smaller sizes */
+@media (max-width: 1024px) {
+  .about-text h3 {
+    font-size: 1.5rem !important;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+  }
 
+  .about-text p {
+    font-size: 0.9rem !important;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .mission-card, .vision-card {
+    padding: 1.2rem !important;
+    border-radius: 15px !important;
+  }
+
+  .mission-card h4, .vision-card h4 {
+    font-size: 1rem !important;
+    margin-bottom: 0.8rem;
+  }
+
+  .mission-card p, .vision-card p {
+    font-size: 0.85rem !important;
+    line-height: 1.4;
+  }
+
+  .stats-section {
+    margin-top: -4rem;
+}
+
+  .stats-section h4 {
+    font-size: 1.2rem !important;
+    margin-bottom: 1.5rem;
+  }
+
+  .stat-item {
+    padding: 1.2rem 1rem !important;
+    border-radius: 15px !important;
+  }
+
+  .stat-number {
+    font-size: 1.5rem !important;
+    margin-bottom: 0.3rem;
+  }
+
+  .stat-label {
+    font-size: 0.8rem !important;
+  }
+
+  .stat-icon {
+    font-size: 2rem !important;
+    margin-bottom: 0.8rem;
+  }
+
+  .features-section h4 {
+    font-size: 1.2rem !important;
+    margin-bottom: 1.5rem;
+  }
+
+  .feature-card {
+    padding: 1.5rem !important;
+    border-radius: 15px !important;
+  }
+
+  .feature-card h5 {
+    font-size: 1rem !important;
+    margin-bottom: 0.8rem;
+  }
+
+  .feature-card p {
+    font-size: 0.85rem !important;
+    line-height: 1.4;
+  }
+
+  .feature-icon {
+    font-size: 2rem !important;
+    margin-bottom: 0.8rem;
+  }
+
+  .tech-stack h4 {
+    font-size: 1.2rem !important;
+    margin-bottom: 1.5rem;
+  }
+
+  .tech-name {
+    font-size: 0.85rem !important;
+  }
+
+  .tech-percent {
+    font-size: 0.8rem !important;
+  }
+
+  .tech-bar {
+    height: 6px !important;
+  }
+
+  .about-cta  {
+      margin-top: -20rem;
+  }
+
+  .about-cta h3 {
+    font-size: 1.3rem !important;
+    margin-bottom: 0.8rem;
+  }
+
+  .about-cta p {
+    font-size: 0.9rem !important;
+    margin-bottom: 1.5rem;
+  }
+
+  .cta-button {
+    padding: 0.8rem 1.5rem !important;
+    font-size: 0.9rem !important;
+  }
+
+  /* Make the shape background smaller */
+  .shape-background {
+    width: 90% !important;
+    height: 60% !important;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 480px) {
+  .about-text h3 {
+    font-size: 1.3rem !important;
+  }
+
+  .about-text p {
+    font-size: 0.85rem !important;
+  }
+
+  .mission-card, .vision-card {
+    padding: 1rem !important;
+  }
+
+  .mission-card p, .vision-card p {
+    font-size: 0.8rem !important;
+  }
+
+  .stat-item {
+    padding: 1rem 0.8rem !important;
+  }
+
+  .stat-number {
+    font-size: 1.3rem !important;
+  }
+
+  .stat-label {
+    font-size: 0.75rem !important;
+  }
+
+  .feature-card {
+    padding: 1.2rem !important;
+  }
+
+  .feature-card p {
+    font-size: 0.8rem !important;
+  }
+
+  .tech-bars {
+    gap: 1rem !important;
+  }
+}
 
 
 

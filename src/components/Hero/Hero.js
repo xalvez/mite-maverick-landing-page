@@ -6,8 +6,7 @@ const Hero = () => {
   const typewriterTexts = [
     'Innovative Software',
     'Digital Solutions',
-    'Business Growth',
-    'Cutting-Edge Technology'
+    'Business Growth'
   ];
 
   const dynamicText = useTypewriter(typewriterTexts, 100, 2000);

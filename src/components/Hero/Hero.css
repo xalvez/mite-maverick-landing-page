@@ -97,39 +97,6 @@
   animation-delay: 2s;
 }
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-20px) rotate(180deg);
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-content {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 2rem;
-  }
-  
-  .hero-title {
-    font-size: 2.5rem;
-  }
-  
-  .hero-visual {
-    height: 200px;
-  }
-}
-
-
-
-
-
-
-
-
-
 /* .hero-content {
   max-width: 1200px;
   margin: 0 auto;
@@ -383,6 +350,15 @@
   animation: scrollLine 2s ease-in-out infinite;
 }
 
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+}
+
 @keyframes scrollLine {
   0% {
     transform: translateY(0);
@@ -414,12 +390,38 @@
 @media (max-width: 1024px) {
   .hero-content {
     gap: 3rem;
+    margin-bottom: 14rem;
+    bottom: 100px;
   }
   
   .hero-title {
     font-size: 3rem;
   }
+
+  .scroll-indicator{
+    display: none;
+  }
+
+  .typewriter-container{
+    font-size: 1.8rem;
+  }
 }
+
+/* @media (max-width: 768px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-visual {
+    height: 200px;
+  }
+} */
 
 @media (max-width: 768px) {
   .hero {

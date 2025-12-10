@@ -99,7 +99,7 @@ const Projects = () => {
                   </div>
                 </div>
                 <div className="project-glow"></div>
-                <div className="light-beam"></div>
+                {/* <div className="light-beam"></div> */}
               </div>
             </ThreeDCard>   
             ))}

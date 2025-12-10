@@ -1,141 +1,179 @@
-import React, { useState } from 'react';
-import { useScroll } from '../../hooks/useScroll';
-import Logo from './Logo';
+import React, { useState, useEffect } from 'react';
 import './Navbar.css';
+import { FiSun, FiMoon, FiMenu, FiX } from 'react-icons/fi';
 
-const Navbar = ({ toggleTheme, theme }) => {
-  const { isScrolled } = useScroll();
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  // {----------------------------------------------------------------------------------------------}
 
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
+
+const FixedLogoNavbar = ({ toggleTheme, theme }) => {
+  const [scrolled, setScrolled] = useState(false);
+  const [darkMode] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState('home');
+  const [logoAnimated, setLogoAnimated] = useState(false);
+
+  // {----------------------------------------------------------------------------------------------}
+
+
+  // Handle scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 50;
+      setScrolled(isScrolled);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // {----------------------------------------------------------------------------------------------}
+
+  // Animate logo on load
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLogoAnimated(true);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+    // {----------------------------------------------------------------------------------------------}
+
+
+  // Trigger animation when scrolled
+  useEffect(() => {
+    if (scrolled) {
+      setLogoAnimated(false);
+      const timer = setTimeout(() => {
+        setLogoAnimated(true);
+      }, 50);
+      return () => clearTimeout(timer);
+    }
+  }, [scrolled]);
+
+  // const toggleDarkMode = () => {
+  //   setDarkMode(!darkMode);
+  //   document.body.classList.toggle('dark-mode');
+  // };
+
+    // {----------------------------------------------------------------------------------------------}
+
+
+  const navItems = [
+    { id: 'home', label: 'Home' },
+    { id: 'about', label: 'About' },
+    { id: 'services', label: 'Services' },
+    { id: 'contact', label: 'Contact' }
+  ];
+
+  
+// Scroll-to-Section Functionality
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setActiveLink(id);
+      setMenuOpen(false);
+    }
   };
 
-  const closeSidebar = () => {
-    setIsSidebarOpen(false);
-  };
+  // Simple logo text
+  const logoText = "Nano Nexus";
+  const letters = logoText.split('');
+
+    // {----------------------------------------------------------------------------------------------}
+
 
   return (
-    <>
-      <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
-        <div className="nav-container">
-          {/* Normal layout for unscrolled state */}
-          {!isScrolled && (
-            <>
-              <Logo />
-              <div className="nav-menu">
-                <a href="#home" className="nav-link">Home</a>
-                <a href="#about" className="nav-link">About</a>
-                <a href="#services" className="nav-link">Services</a>
-                <a href="#projects" className="nav-link">Projects</a>
-                <a href="#contact" className="nav-link">Contact</a>
-                <button 
-                  className="theme-toggle"
-                  onClick={toggleTheme}
-                  aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+    <nav className={`logo-nav ${scrolled ? 'scrolled' : ''} ${darkMode ? 'dark' : ''}`}>
+      <div className="nav-inner">
+        {/* Logo Section */}
+        <div 
+          className="logo-section"
+          onClick={() => scrollToSection('home')}
+        >
+          <div className={`logo-box ${logoAnimated ? 'animated' : ''}`}>
+            <h1 className="logo-title">
+              {letters.map((letter, index) => (
+                <span 
+                  key={index} 
+                  className="logo-char"
+                  data-index={index}
+                  data-scrolled={scrolled}
                 >
-                  {theme === 'light' ? '🌙' : '☀️'}
-                </button>
-              </div>
-              <button 
-                className={`hamburger ${isSidebarOpen ? 'active' : ''}`}
-                onClick={toggleSidebar}
-                aria-label="Toggle menu"
-              >
-                <span></span>
-                <span></span>
-                <span></span>
-              </button>
-            </>
-          )}
-          
-          {/* Centered layout for scrolled state */}
-          {isScrolled && (
-            <div className="centered-content">
-              <Logo />
-              <div className="centered-nav">
-                <a href="#home" className="nav-link">Home</a>
-                <a href="#about" className="nav-link">About</a>
-                <a href="#services" className="nav-link">Services</a>
-                <a href="#projects" className="nav-link">Projects</a>
-                <a href="#contact" className="nav-link">Contact</a>
-                <button 
-                  className="theme-toggle"
-                  onClick={toggleTheme}
-                  aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-                >
-                  {theme === 'light' ? '🌙' : '☀️'}
-                </button>
-              </div>
-              <button 
-                className={`hamburger ${isSidebarOpen ? 'active' : ''}`}
-                onClick={toggleSidebar}
-                aria-label="Toggle menu"
-              >
-                <span></span>
-                <span></span>
-                <span></span>
-              </button>
+                  {letter === ' ' ? '\u00A0' : letter}
+                </span>
+              ))}
+            </h1>
+            <div className="logo-subtitle">
+              <span className={`subtitle-text ${scrolled ? 'small' : ''}`}>
+                Solution
+              </span>
+              <div className="subtitle-line"></div>
             </div>
-          )}
+          </div>
         </div>
-      </nav>
 
-      {/* Sidebar Overlay */}
-      <div 
-        className={`sidebar-overlay ${isSidebarOpen ? 'active' : ''}`}
-        onClick={closeSidebar}
-      ></div>
-
-      {/* Sidebar */}
-      <aside className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
-        <div className="sidebar-header">
-          <Logo />
-          <button 
-            className="sidebar-close"
-            onClick={closeSidebar}
-            aria-label="Close menu"
-          >
-            ✕
-          </button>
+        {/* Navigation Links */}
+        <div className="nav-links-wrapper">
+          {navItems.map((item) => (
+            <button
+              key={item.id}
+              className={`nav-button ${activeLink === item.id ? 'active' : ''}`}
+              onClick={() => scrollToSection(item.id)}
+            >
+              {item.label}
+              <span className="button-line"></span>
+            </button>
+          ))}
         </div>
-        
-        <nav className="sidebar-nav">
-          <a href="#home" className="sidebar-link" onClick={closeSidebar}>
-            <span>🏠</span>
-            Home
-          </a>
-          <a href="#about" className="sidebar-link" onClick={closeSidebar}>
-            <span>👥</span>
-            About
-          </a>
-          <a href="#services" className="sidebar-link" onClick={closeSidebar}>
-            <span>🛠️</span>
-            Services
-          </a>
-          <a href="#projects" className="sidebar-link" onClick={closeSidebar}>
-            <span>💼</span>
-            Projects
-          </a>
-          <a href="#contact" className="sidebar-link" onClick={closeSidebar}>
-            <span>📞</span>
-            Contact
-          </a>
-        </nav>
 
-        <div className="sidebar-footer">
+        {/* Right Actions */}
+        <div className="nav-actions-wrapper">
           <button 
-            className="sidebar-theme-toggle"
+            className="theme-button"
             onClick={toggleTheme}
-            aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+            aria-label="Toggle theme"
           >
-            <span>{theme === 'light' ? '🌙' : '☀️'}</span>
-            {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
+            {darkMode ? <FiMoon /> : <FiSun />}
+          </button>
+          
+          <button 
+            className="mobile-button"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+          >
+            {menuOpen ? <FiX /> : <FiMenu />}
           </button>
         </div>
-      </aside>
-    </>
+      </div>
+
+      {/* Mobile Menu */}
+      <div className={`mobile-menu-wrapper ${menuOpen ? 'open' : ''}`}>
+        {navItems.map((item) => (
+          <button
+            key={item.id}
+            className={`mobile-menu-button ${activeLink === item.id ? 'active' : ''}`}
+            onClick={() => scrollToSection(item.id)}
+          >
+            {item.label}
+            <span className="menu-arrow">→</span>
+          </button>
+        ))}
+      </div>
+    </nav>
   );
 };
 
-export default Navbar;
+export default FixedLogoNavbar;
+
+
+
+
+
+
+
+
+
+
+

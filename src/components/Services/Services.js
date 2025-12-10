@@ -12,28 +12,28 @@ const Services = () => {
       icon: '💻',
       title: 'Web Development',
       description: 'Custom web applications built with modern technologies and best practices.',
-      features: ['React.js', 'Node.js', 'Responsive Design', 'SEO Optimized'],
+      // features: ['React.js', 'Node.js', 'Responsive Design', 'SEO Optimized'],
       variant: 'glass'
     },
     {
       icon: '📱',
       title: 'Mobile Apps',
       description: 'Cross-platform mobile applications for iOS and Android.',
-      features: ['React Native', 'Flutter', 'Native Development', 'App Store Deployment'],
+      // features: ['React Native', 'Flutter', 'Native Development', 'App Store Deployment'],
       variant: 'glass'
     },
     {
       icon: '☁️',
       title: 'Cloud Solutions',
       description: 'Scalable cloud infrastructure and deployment solutions.',
-      features: ['AWS', 'Azure', 'Google Cloud', 'DevOps'],
+      // features: ['AWS', 'Azure', 'Google Cloud', 'DevOps'],
       variant: 'glass'
     },
     {
       icon: '🔧',
       title: 'Custom Software',
       description: 'Tailored software solutions for your specific business needs.',
-      features: ['ERP Systems', 'CRM Solutions', 'Automation Tools', 'API Integration'],
+      // features: ['ERP Systems', 'CRM Solutions', 'Automation Tools', 'API Integration'],
       variant: 'glass'
     }
   ];
@@ -79,16 +79,16 @@ const Services = () => {
                     <h3 className="service-title text-3d">{service.title}</h3>
                   </div>
                   <p className="service-description">{service.description}</p>
-                  <ul className="service-features">
+                  {/* <ul className="service-features">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="service-feature">
                         <span className="feature-check">✓</span>
                         {feature}
                       </li>
                     ))}
-                  </ul>
-                  <div className="service-glow"></div>
-                  <div className="light-beam"></div>
+                  </ul> */}
+                  {/* <div className="service-glow"></div> */}
+                  {/* <div className="light-beam"></div> */}
                   <button className="service-cta glass-button button-3d">
                     <span className="button-3d-content">Learn More</span>
                   </button>
@@ -100,7 +100,7 @@ const Services = () => {
 
         {/* Services CTA with 3D Effect */}
         <div className={`services-cta shape-reveal ${isSectionVisible ? 'visible' : ''}`}>
-          <ThreeDCard variant="glass" withShadow={true} withGlow={true}>
+          
             <div className="cta-content">
               <h3 className="text-3d">Need a Custom Solution?</h3>
               <p>We specialize in creating tailored software that fits your unique business requirements.</p>
@@ -108,7 +108,7 @@ const Services = () => {
                 <span className="button-3d-content">Get Free Consultation</span>
               </button>
             </div>
-          </ThreeDCard>
+         
         </div>
       </div>
     </section>

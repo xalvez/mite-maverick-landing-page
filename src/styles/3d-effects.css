@@ -16,12 +16,12 @@
   transform: translateZ(20px);
 }
 
-.card-3d:hover .card-3d-content {
+/* .card-3d:hover .card-3d-content {
   transform: 
     rotateY(calc(var(--mouse-x) * 15deg)) 
     rotateX(calc(var(--mouse-y) * -15deg))
     translateZ(30px);
-}
+} */
 
 /* 3D Card with Glass Morphism */
 .card-3d-glass {
@@ -36,7 +36,7 @@
   transform-style: preserve-3d;
   transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
-
+/* 3d cards attributes */
 .card-3d-glass::before {
   content: '';
   position: absolute;
@@ -185,10 +185,7 @@
 }
 
 .card-3d:hover .text-3d {
-  text-shadow: 
-    0 2px 0 rgba(255, 255, 255, 0.4),
-    0 4px 0 rgba(255, 255, 255, 0.2),
-    0 6px 0 rgba(255, 255, 255, 0.1);
+  text-shadow: #4d74f6 1px 0 10px;  
   transform: translateZ(40px);
 }
 
