@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/Mite-Maverick-pro/static/css/main.20a47238.css",
+    "main.js": "/Mite-Maverick-pro/static/js/main.de2368a0.js",
+    "static/js/228.7ae50eab.chunk.js": "/Mite-Maverick-pro/static/js/228.7ae50eab.chunk.js",
+    "static/js/475.d61d1d2e.chunk.js": "/Mite-Maverick-pro/static/js/475.d61d1d2e.chunk.js",
+    "static/js/449.bced0622.chunk.js": "/Mite-Maverick-pro/static/js/449.bced0622.chunk.js",
+    "static/js/155.57e71ce7.chunk.js": "/Mite-Maverick-pro/static/js/155.57e71ce7.chunk.js",
+    "static/js/483.201177a4.chunk.js": "/Mite-Maverick-pro/static/js/483.201177a4.chunk.js",
+    "static/js/732.389a08ef.chunk.js": "/Mite-Maverick-pro/static/js/732.389a08ef.chunk.js",
+    "static/js/331.64ada0e5.chunk.js": "/Mite-Maverick-pro/static/js/331.64ada0e5.chunk.js",
+    "static/js/649.9744cc4c.chunk.js": "/Mite-Maverick-pro/static/js/649.9744cc4c.chunk.js",
+    "static/js/267.15905e56.chunk.js": "/Mite-Maverick-pro/static/js/267.15905e56.chunk.js",
+    "static/js/643.128edb82.chunk.js": "/Mite-Maverick-pro/static/js/643.128edb82.chunk.js",
+    "static/media/668@4x.png": "/Mite-Maverick-pro/static/media/668@4x.50f1b6c27b93f62a3b79.png",
+    "static/media/vvvvvvvv@4x.png": "/Mite-Maverick-pro/static/media/vvvvvvvv@4x.86106873d9b25c1367a7.png",
+    "static/media/ddddd@4x.png": "/Mite-Maverick-pro/static/media/ddddd@4x.1451feea04de95aae83b.png",
+    "static/media/ttttttttt@4x.png": "/Mite-Maverick-pro/static/media/ttttttttt@4x.d7a822e6de5dafe7e1ca.png",
+    "static/media/kkkkkk@4x.png": "/Mite-Maverick-pro/static/media/kkkkkk@4x.12f5bfed2fd64a925ebe.png",
+    "static/media/fin-teck.png": "/Mite-Maverick-pro/static/media/fin-teck.cff8a67b097303d7d0ae.png",
+    "static/media/Asset 2@4x.png": "/Mite-Maverick-pro/static/media/Asset 2@4x.9ea9d2c4b63419cf4704.png",
+    "static/media/custom-software.png": "/Mite-Maverick-pro/static/media/custom-software.3ca3db80e48103613de1.png",
+    "static/media/custom-api.png": "/Mite-Maverick-pro/static/media/custom-api.191d3745824b50f0e72f.png",
+    "static/media/graphic-design.png": "/Mite-Maverick-pro/static/media/graphic-design.9760b65a442da4ecbd9b.png",
+    "static/media/Asset 7@4x.png": "/Mite-Maverick-pro/static/media/Asset 7@4x.8c805ce0640fabef6786.png",
+    "static/media/internal-systems.png": "/Mite-Maverick-pro/static/media/internal-systems.b414738a4b5f96bdd300.png",
+    "static/media/application.png": "/Mite-Maverick-pro/static/media/application.fd3d31079b9b6910bcb4.png",
+    "index.html": "/Mite-Maverick-pro/index.html",
+    "main.20a47238.css.map": "/Mite-Maverick-pro/static/css/main.20a47238.css.map",
+    "main.de2368a0.js.map": "/Mite-Maverick-pro/static/js/main.de2368a0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.20a47238.css",
+    "static/js/main.de2368a0.js"
+  ]
+}

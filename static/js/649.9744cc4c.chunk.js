@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_react_app=self.webpackChunkmy_react_app||[]).push([[649],{649(e){e.exports=JSON.parse('{"nav":{"home":"Home","about":"About Us","ourVision":"Our Vision","services":"Services","yourRequest":"Your Request","contact":"Contact"}}')}}]);
