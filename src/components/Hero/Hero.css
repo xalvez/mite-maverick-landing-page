@@ -1,0 +1,292 @@
+.zenith-hero-section {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5%;
+  position: relative;
+  background: transparent; 
+}
+
+.zenith-main-layout {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  z-index: 2;
+  background: transparent;
+}
+
+/* --- Text Section --- */
+.zenith-text-block {
+  animation: zenithFadeIn 1s ease;
+  position: relative;
+  /* Removed left: 200px to fix horizontal scroll */
+}
+
+.zenith-main-title {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  color: var(--text-secondary); /* Main title in white */
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.zenith-typewriter-container {
+  display: inline-flex;
+  align-items: center;
+  min-width: 320px;  
+  height: 1.2em;
+  vertical-align: bottom;
+  user-select: none;
+}
+
+.zenith-typewriter-text {
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+  will-change: content; 
+}
+
+.zenith-typewriter-cursor {
+  display: inline-block;
+  margin-left: 4px;
+  width: 3px;
+  height: 1.1em;
+  background-color: var(--accent-1);
+  /* Use a transform-based blink for better performance than opacity */
+  animation: zenithBlink 1s step-end infinite;  
+}
+
+@keyframes zenithBlink {
+ 0%, 100% { visibility: visible; }
+  50% { visibility: hidden; }
+ }
+
+.zenith-sub-text {
+  font-size: 1.1rem;
+  color: var(--text-secondary); /* Changed to white per your request */
+  opacity: 0.8;
+  max-width: 500px;
+  margin-bottom: 2.5rem;
+}
+
+/* --- Themed Button --- */
+.zenith-cta-btn {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 1.1rem 2.6rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  background: var(--gradient-buttons-bg);
+  color: var(--text-secondary);
+  transition: 0.4s ease;
+  box-shadow: 0 10px 20px rgba(38, 170, 135, 0.2);
+}
+
+.zenith-cta-btn:hover {
+  transform: translateY(-5px);
+  filter: brightness(1.1);
+  box-shadow: 0 15px 30px rgba(38, 170, 135, 0.3);
+}
+
+.zenith-btn-arrow { transition: 0.3s ease; }
+.zenith-cta-btn:hover .zenith-btn-arrow { transform: translateX(6px); }
+
+/* --- Social Icons (Transparent with Your Border) --- */
+.zenith-social-wrapper {
+  margin-top: 3rem;
+  background: transparent;
+}
+
+.zenith-social-label {
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.zenith-social-grid {
+  display: flex;
+  gap: 15px;
+}
+
+.zenith-social-item {
+  width: 40px;
+  height: 44px;
+  background-color: #262626;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+}
+
+.zenith-icon-asset {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  color: var(--text-primary);
+}
+
+.zenith-social-item:hover {
+  background: var(--accent-1);
+  border-color: var(--accent-1);
+  transform: translateY(-3px);
+}
+
+.zenith-social-item:hover .zenith-icon-asset {
+  filter: brightness(0); /* Black icon on green background */
+}
+
+/* --- Media Asset (Transparent) --- */
+.zenith-media-block {
+  display: flex;
+  justify-content: center;
+  background: transparent;
+}
+
+.zenith-asset-holder {
+  width: 100%;
+  max-width: 500px;
+  background: transparent;
+}
+
+.zenith-img-fluid, .zenith-video-fluid {
+  width: 100%;
+  height: auto;
+  background: transparent;
+}
+
+/* --- Responsive & Mobile View Fix --- */
+@media (max-width: 850px) {
+  .zenith-main-layout {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding-top: 60px;
+  }
+
+  .zenith-text-block { order: 2; }
+  .zenith-media-block { order: 1; margin-bottom: 2rem; }
+
+  .zenith-sub-text { margin: 0 auto 2.5rem; }
+  .zenith-social-grid, .zenith-action-area { justify-content: center; }
+}
+
+@keyframes zenithFadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.zenith-scroll-down {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.zenith-scroll-bar {
+  width: 2px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--accent-1), transparent);
+}
+ 
+
+ /* --- Breakpoint: 768px (Tablets) --- */
+@media (max-width: 768px) {
+  .zenith-main-layout {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .zenith-text-block { order: 2; }
+  .zenith-media-block { order: 1; margin-bottom: 1rem; }
+
+  .zenith-main-title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+
+  .zenith-sub-text {
+    margin: 0 auto 2rem; /* Centers the subtitle for both languages */
+  }
+
+  .zenith-social-grid, 
+  .zenith-action-area {
+    justify-content: center;
+  }
+
+  /* Center the typewriter container itself */
+  .zenith-typewriter-container {
+    justify-content: center;
+    min-width: 100%; /* Allow it to center relative to the screen */
+  }
+
+  /* Language specific adjustments for your "nudge" (right: 40px) */
+  .zenith-ltr .zenith-typewriter-text,
+  .zenith-ltr .zenith-typewriter-cursor {
+    position: relative;
+    right: 40px; /* Moves left in English */
+  }
+
+  .zenith-rtl .zenith-typewriter-text,
+  .zenith-rtl .zenith-typewriter-cursor {
+    position: relative;
+    left: 40px; /* Moves right in Arabic */
+  }
+}
+
+/* --- Breakpoint: 480px (Mobile) --- */
+@media (max-width: 480px) {
+  .zenith-main-title {
+    font-size: 2rem;
+  }
+  
+  /* Reduce the offset on smaller screens to prevent clipping */
+  .zenith-ltr .zenith-typewriter-text, .zenith-ltr .zenith-typewriter-cursor { right: 20px; }
+  .zenith-rtl .zenith-typewriter-text, .zenith-rtl .zenith-typewriter-cursor { left: 20px; }
+  
+  .zenith-cta-btn {
+   
+    padding: 0.9rem 1.5rem;
+  }
+}
+
+/* --- Breakpoint: 340px (Small Mobile) --- */
+@media (max-width: 340px) {
+  .zenith-main-title {
+    font-size: 1.7rem;
+  }
+
+  /* Remove offsets entirely on tiny screens to avoid horizontal overflow */
+  .zenith-typewriter-text, .zenith-typewriter-cursor {
+    right: 0 !important;
+    left: 0 !important;
+  }
+
+  .zenith-sub-text {
+    font-size: 0.9rem;
+    padding: 0 10px;
+  }
+}
+
+
+  [dir="rtl"] .zenith-btn-arrow {
+    transform: rotate(180deg);
+    transition: 0.3s ease;
+  }
+
+  [dir="rtl"] .zenith-cta-btn:hover .zenith-btn-arrow {
+    transform: rotate(180deg) translateX(6px);
+  }
+
+ 
+ 

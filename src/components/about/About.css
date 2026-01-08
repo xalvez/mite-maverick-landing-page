@@ -1,0 +1,391 @@
+/* About.css */
+.smooth-container {
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background: transparent;
+}
+
+.smooth-section {
+  position: relative;
+  width: 100%;
+  padding: 80px 0;
+}
+
+.content-wrapper {
+  max-width: 1600px; /* Increased from 850px for a "bigger" medium look */
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px; /* Added significant gap between sides */
+  align-items: stretch;
+}
+
+/* Left Side: Tech Text Card */
+.about-text-section {
+  position: relative;
+  padding: 50px; 
+ 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+ 
+  border-radius: 0; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform 1s ease, filter 0.5s ease;
+}
+
+.about-text-section:hover {
+  transform: scale(1.08);
+  filter: grayscale(0%);
+}
+
+/* Sharp Corners Animations */
+.about-text-section::before, .about-text-section::after,
+.bottom-left-horizontal, .bottom-left-vertical {
+  content: '';
+  position: absolute;
+  background: var(--accent-1);
+  transition: all 2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  z-index: 2;
+  
+}
+
+.about-text-section::before { top: -1px; right: -1px; width: 40px; height: 2px; box-shadow: 0px 0px 30px var(--accent-1); }
+.about-text-section::after { top: -1px; right: -1px; width: 2px; height: 40px; box-shadow: 0px 0px 30px var(--accent-1); }
+.bottom-left-horizontal { bottom: -1px; left: -1px; width: 40px; height: 2px; box-shadow: 0px 0px 30px var(--accent-1);}
+.bottom-left-vertical { bottom: -1px; left: -1px; width: 2px; height: 40px; box-shadow: 0px 0px 30px var(--accent-1);}
+
+.about-text-section:hover::before, .about-text-section:hover .bottom-left-horizontal { width: 50%; }
+.about-text-section:hover::after, .about-text-section:hover .bottom-left-vertical { height: 30%; }
+
+/* Right Side: Image Module */
+.about-image-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-container {
+  height: 100%;
+  width: 100%;
+}
+
+.main-image img {
+  width: 40%;
+  height: 40%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(20%);
+  transition: transform 0.8s ease, filter 0.5s ease;
+  position: relative;
+  left: 30%;
+}
+/* 
+.about-image-section:hover .main-image img {
+  transform: scale(1.08);
+  filter: grayscale(0%);
+} */
+
+/* Stats Styling */
+.image-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+  padding-top: 25px;
+
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent-1); 
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Typography */
+.about-text-section h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  /* background: linear-gradient(90deg, #fff, #888); */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: var(--text-primary);
+}
+
+.about-text-section p {
+  font-size: 20px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* RTL Support for About Section */
+[dir="rtl"] .about-grid {
+  direction: rtl;
+}
+
+/* RTL Text Alignment */
+[dir="rtl"] .about-text-section h2,
+[dir="rtl"] .about-text-section p {
+  text-align: right;
+}
+
+/* RTL Corner Accents */
+[dir="rtl"] .about-text-section::before {
+  right: auto;
+  left: -1px;
+}
+
+[dir="rtl"] .about-text-section::after {
+  right: auto;
+  left: -1px;
+}
+
+[dir="rtl"] .bottom-left-horizontal {
+  left: auto;
+  right: -1px;
+}
+
+[dir="rtl"] .bottom-left-vertical {
+  left: auto;
+  right: -1px;
+}
+
+/* RTL Hover Effects */
+[dir="rtl"] .about-text-section:hover::before,
+[dir="rtl"] .about-text-section:hover .bottom-left-horizontal {
+  width: 50%;
+  
+}
+
+/* RTL Image Positioning */
+[dir="rtl"] .main-image img {
+  left: auto;
+  right: 30%;
+}
+
+/* RTL Stats Grid */
+[dir="rtl"] .image-stats {
+  direction: rtl;
+}
+
+/* Loading Placeholder */
+.loading-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  color: var(--text-primary);
+  font-size: 18px;
+  opacity: 0.7;
+}
+
+/* Responsive Design for RTL */
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  [dir="rtl"] .main-image img {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  /* RTL Mobile Adjustments */
+  [dir="rtl"] .about-text-section {
+    text-align: right;
+  }
+  
+  /* Ensure proper spacing for Arabic text */
+  [dir="rtl"] .about-text-section p {
+    line-height: 1.8;
+    letter-spacing: normal;
+  }
+}
+
+/* Font adjustments for Arabic */
+[dir="rtl"] .about-text-section h2 {
+  font-family: var(--font-arabic, var(--font-body));
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+[dir="rtl"] .about-text-section p {
+  font-family: var(--font-arabic, var(--font-body));
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* Fix line breaks for Arabic */
+[dir="rtl"] .about-text-section br {
+  content: "";
+  display: block;
+  margin: 10px 0;
+}
+
+/* Stats value alignment for RTL */
+[dir="rtl"] .stat-value {
+  direction: ltr; /* Keep numbers LTR even in RTL */
+  display: inline-block;
+}
+
+/* Ensure proper content flow for RTL */
+[dir="rtl"] .content-wrapper {
+  text-align: right;
+}
+
+/* Adjust padding for RTL */
+[dir="rtl"] .about-text-section {
+  padding: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Optimized Mobile Design for About Section */
+@media (max-width: 768px) {
+  .smooth-section {
+    padding: 60px 0; /* Reduced padding for mobile screens */
+  }
+
+  .content-wrapper {
+    padding: 0 20px; /* More space for content on small screens */
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr; /* Stack elements vertically */
+    gap: 30px; /* Better spacing between text and image */
+  }
+
+  /* Text Card Adjustments */
+  .about-text-section {
+    padding: 30px 20px; /* Compact padding for mobile */
+    order: 1; /* Ensure text stays on top */
+    text-align: center; /* Center text for a cleaner mobile look */
+  }
+
+  /* Heading size adjustment for small screens */
+  .about-text-section h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    line-height: 1.3;
+  }
+
+  /* Big Paragraph Optimization */
+  .about-text-section p {
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: justify; /* Keeps long paragraphs looking tidy */
+    text-justify: inter-word;
+    margin-bottom: 10px;
+  }
+
+  /* Image Section Adjustments */
+  .about-image-section {
+    order: 2; /* Image follows the text */
+    display: flex;
+    justify-content: center;
+    overflow: visible;
+  }
+
+  .main-image img {
+display: none;
+  }
+
+  /* Specific RTL Mobile Adjustments */
+  [dir="rtl"] .about-text-section {
+    text-align: right;
+  }
+
+  [dir="rtl"] .about-text-section p {
+    text-align: right;
+    line-height: 1.8; /* Arabic needs more height to be readable */
+  }
+
+  [dir="rtl"] .main-image img {
+    left: auto;
+    right: 0;
+  }
+
+  /* Corner Accents - resize for mobile so they don't overlap text */
+  /* .about-text-section::before, 
+  .about-text-section::after,
+  .bottom-left-horizontal, 
+  .bottom-left-vertical {
+    width: 20px;
+    height: 20px;
+  } */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

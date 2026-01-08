@@ -1,0 +1,27 @@
+{
+  "title_part1": "Transform Your Business with",
+  "title_part2": "Innovative Software",
+  "title_part3": "Digital Solutions",
+  "title_part4": "Business Growth",
+  "subtitle": "We create cutting-edge software solutions that drive growth, efficiency, and digital transformation for businesses worldwide.",
+  "cta_button": "Start Your Project Today",
+  "social_label": "Connect With Us",
+  "social_links": [
+    {
+      "platform": "Facebook",
+      "url": "#"
+    },
+    {
+      "platform": "Instagram",
+      "url": "#"
+    },
+    {
+      "platform": "WhatsApp",
+      "url": "#"
+    },
+    {
+      "platform": "LinkedIn",
+      "url": "#"
+    }
+  ]
+}

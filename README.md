@@ -1,70 +1,106 @@
-# Getting Started with Create React App
+.final-cta {
+  backdrop-filter: var(--glass-blur);
+  padding: 30px 30px;
+  text-align: center;
+  transition: all 2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  position: relative;
+  bottom: 450px;
+  overflow: hidden;
+}
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+/* Top-right corner piece */
+.final-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px; /* Length of glow */
+  height: 2px; /* Border thickness */
+  background: linear-gradient(to left, 
+    #42CCA4 0%,
+    #42CCA4 30%,
+    #42CCA4 60%,
+    transparent 100%
+  );
+ 
+transition: all 1s ease;
+  
+}
 
-## Available Scripts
+/* Top-right vertical piece */
+.final-cta::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 60px;
+  background: linear-gradient(to bottom, 
+    #26AA87 0%,
+    #26AA87 30%,
+    #26AA87 60%,
+    transparent 100%
+  );
 
-In the project directory, you can run:
+transition: all 1s ease;
 
-### `npm start`
+}
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+/* Bottom-left corner piece */
+.final-cta .bottom-left-horizontal {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(to right, 
+    #26AA87 0%,
+    #26AA87 30%,
+    #26AA87 60%,
+    transparent 100%
+  );
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+transition: all 1s ease;
 
-### `npm test`
+}
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+/* Bottom-left vertical piece */
+.final-cta .bottom-left-vertical {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  height: 60px;
+  background: linear-gradient(to top, 
+    #26AA87 0%,
+    #26AA87 30%,
+    #26AA87 60%,
+    transparent 100%
+  );
+transition: all 1s ease;
+}
 
-### `npm run build`
+.final-cta:hover {
+  transform: translateY(-30px);
+  box-shadow: var(--glass-shadow);  
+}
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+.final-cta:hover::after {
+  height: 200px;
+}
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+.final-cta:hover::before{
+  width: 1000px;
+}
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+.final-cta:hover .bottom-left-horizontal{
+  width: 1000px;
+}
 
-### `npm run eject`
+.final-cta:hover .bottom-left-vertical{
+  height: 200px;
+}
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+                <div class="bottom-left-horizontal"></div>
+                <div class="bottom-left-vertical"></div>
