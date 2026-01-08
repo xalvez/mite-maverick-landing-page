@@ -1,0 +1,79 @@
+:root {
+  /* Light Theme */
+  --bg-primary: #ffffff;
+  --bg-secondary: #ffffff;
+  --text-primary: #26AA87;
+  --text-secondary: #26AA87;
+  --accent-1: #26AA87;
+  --accent-2: #26AA87;
+  --border-color: #26AA87;
+  --button-bg: #26AA87;
+  --button-text: #1A1A1A;
+  
+  /* Typography */
+  --font-logo: 'Poppins', sans-serif;
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: "Microsoft Tai Le", sans-serif;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #1A1A1A;
+  --bg-secondary: #3e54a3;
+  --text-primary: #647eda;
+  --text-secondary: #E2E8F0;
+  --accent-1: #6B7BB3;
+  --accent-2: #5C6B9C;
+  --border-color: #4A5568;
+  --button-bg: #6B7BB3;
+  --button-text: #FFFFFF;
+}
+
+
+:root {
+  /* Existing variables... */
+  
+  /* Glass Morphism Variables */
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-shadow: 0 8px 32px rgb(0, 0, 0);
+  --glass-blur: blur(20px);
+  --glass-backdrop: backdrop-filter(20px);
+}
+
+[data-theme="dark"] {
+  /* Dark theme glass variables */
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px rgb(255, 0, 0);
+}
+
+
+
+
+
+
+/* Add these to your existing :root section in variables.css */
+:root {
+  /* Existing variables... */
+  
+  /* Footer specific variables */
+  --footer-bg: var(--bg-secondary);
+  --footer-text: var(--text-secondary);
+  --footer-heading: var(--text-primary);
+  --footer-link-hover: var(--accent-1);
+  --footer-border: var(--border-color);
+  --footer-glass-bg: var(--glass-bg);
+  --footer-glass-border: var(--glass-border);
+}
+
+[data-theme="dark"] {
+  /* Existing dark theme variables... */
+  
+  /* Footer dark theme overrides */
+  --footer-bg: rgba(26, 26, 26, 0.95);
+  --footer-glass-bg: rgba(255, 255, 255, 0.05);
+}
+
+
+
+

@@ -1,0 +1,48 @@
+{
+  "title": "Your",
+  "titleSpan": "Request",
+  "subtitle": "Complete the details below to receive a custom quote for your project from A to Z.",
+  "labels": {
+    "sector": "What is the target sector?",
+    "platform": "What platform is required?",
+    "identity": "Do you have a visual identity?",
+    "delivery": "Expected prototype delivery time?",
+    "tech": "Technology preference?",
+    "budget": "Allocated budget?",
+    "contact": "Your mobile number or email"
+  },
+  "placeholders": {
+    "select": "Please provide your answer...",
+    "contact": "Enter contact info",
+    "tech": "Enter specific technology here...",
+    "sector": "What is the target sector?"
+  },
+  "options": {
+    "unspecified": "Unspecified",
+    "specified": "Specified",
+    "identityYes": "Yes, I have ",
+    "identityNo": "No, I need one",
+
+    "E_commerce": "E-commerce",
+    "RealEstate": "Real Estate",
+    "Education": "Education",
+    "Service": "Service",
+    "Economic": "Economic",
+    "Financial": "Financial",
+    "Industrial": "Industrial",
+    "Medical": "Medical",
+    "Legal": "Legal",
+    "Other": "Other",
+
+    "WebApplication": "Web Application",
+    "DesktopApplication": "Desktop Application",
+    "MobileApplication": "Mobile Application",
+    "All": "All",
+
+    "One1Month": "1 Months",
+    "MultiMonthes": "2-3 Months",
+    "Flexible": "Flexible"
+  },
+  "button": "Get Price Now",
+  "success": "Your request was sent successfully!"
+}

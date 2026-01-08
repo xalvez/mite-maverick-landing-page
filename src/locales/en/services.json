@@ -1,0 +1,63 @@
+{
+  "title": "Our Services",
+  "services": [
+    {
+      "id": 1,
+      "title": "Applications",
+      "description": "We develop modern, user-friendly applications that meet user needs and support your business growth.",
+      "stats": {
+        "projects": "150+",
+        "accuracy": "99%"
+      }
+    },
+    {
+      "id": 2,
+      "title": "Internal systems for businesses",
+      "description": "Intelligent internal systems to streamline processes, improve productivity, and manage business more efficiently.",
+      "stats": {
+        "projects": "220+",
+        "uptime": "99.9%"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Custom software solutions",
+      "description": "Software specifically designed to meet your business requirements and deliver precise and effective solutions.",
+      "stats": {
+        "projects": "85+",
+        "transactions": "1M+"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Custom APIs",
+      "description": "Custom applications with a unique identity and seamless user experience that reflect your vision and goals.",
+      "stats": {
+        "projects": "120+",
+        "devices": "50K+"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Graphic Design",
+      "description": "We transform ideas into captivating visual designs that reflect the brand's identity and leave a lasting impression.",
+      "stats": {
+        "projects": "300+",
+        "threats": "10K+"
+      }
+    },
+    {
+      "id": 6,
+      "title": "Fin-Tech",
+      "description": "Innovative and secure financial technology solutions that simplify financial transactions and keep pace with the evolving digital market.",
+      "stats": {
+        "projects": "95+",
+        "immersion": "95%"
+      }
+    }
+  ],
+  "navigation": {
+    "prev": "Previous",
+    "next": "Next"
+  }
+}

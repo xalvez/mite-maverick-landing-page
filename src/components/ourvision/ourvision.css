@@ -1,0 +1,366 @@
+
+
+.vision-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 40px;
+
+  font-family: var(--font-body);
+}
+
+.vision-section-header {
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 50px;
+  text-align: left;
+}
+
+.our-vision-title {
+  font-size: 4rem;
+  font-weight: 800;
+  color: var(--text-secondary);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+}
+
+/* Container */
+.vision-container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  height: 500px;
+  gap: 20px;
+}
+
+/* Card Base */
+.vision-card {
+  position: relative;
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  transition: flex 2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s ease;
+  border: 1px solid var(--border-color);
+  transition: 
+    flex 2s cubic-bezier(0.16, 1, 0.3, 1), 
+    transform 0.4s ease,
+    height 0.8s cubic-bezier(0.16, 1, 0.3, 1); /* Added height transition */
+  border: 1px solid var(--border-color);
+}
+
+/* Desktop Hover Interaction */
+@media (min-width: 801px) {
+  .vision-card:hover {
+    flex: 3;
+    transform: translateY(-10px);
+  }
+
+  .vision-card:hover .vision-details {
+    max-height: 300px;
+    opacity: 1;
+    margin-top: 20px;
+  }
+
+  .mobile-expand-trigger {
+    display: none; /* Hide toggle button on desktop */
+  }
+}
+
+/* Overlay & Content */
+.vision-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  transition: all 0.5s ease;
+  z-index: 1;
+}
+
+.vision-card:hover .vision-overlay, 
+.vision-card.active .vision-overlay {
+  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.vision-content {
+  position: absolute;
+  bottom: 40px;
+  left: 30px;
+  right: 30px;
+  z-index: 2;
+  color: var(--text-secondary);
+}
+
+.vision-subtitle {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  color: var(--text-secondary);
+}
+
+.vision-title {
+  font-size: 1.8rem;
+  margin: 0;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Details Section (Hidden by default) */
+.vision-details {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+ 
+}
+
+/* Buttons */
+.vision-btn {
+  background : var(--gradient-buttons-bg);
+  color: var(--button-text);
+  border: none;
+  padding: 10px 24px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background 1s ease;
+}
+
+.vision-btn:hover {
+  background: var(--gradient-primary);
+}
+
+.mobile-expand-trigger {
+  background: transparent;
+  border: 1px solid var(--accent-1);
+  color: var(--accent-1);
+  padding: 6px 12px;
+  margin-top: 10px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Corner Accents */
+.vision-card::before, .vision-card::after, 
+.bottom-left-horizontal, .bottom-left-vertical {
+  content: '';
+  position: absolute;
+  background: var(--accent-1);
+  transition: all 0.8s ease;
+  z-index: 5;
+}
+
+.vision-card::before { top: 0; right: 0; width: 50px; height: 2px; }
+.vision-card::after { top: 0; right: 0; width: 2px; height: 50px; }
+.bottom-left-horizontal { bottom: 0; left: 0; width: 50px; height: 2px; }
+.bottom-left-vertical { bottom: 0; left: 0; width: 2px; height: 50px; }
+
+.vision-card:hover::before, .vision-card.active::before { width: 45%; }
+.vision-card:hover::after, .vision-card.active::after { height: 45%; }
+.vision-card:hover .bottom-left-horizontal, .vision-card.active .bottom-left-horizontal { width: 45%; }
+.vision-card:hover .bottom-left-vertical, .vision-card.active .bottom-left-vertical { height: 45%; }
+
+/* Mobile Responsiveness */
+@media (max-width: 800px) {
+  .vision-wrapper { padding: 40px 20px; }
+
+  .vision-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .vision-card {
+    height: 250px;
+    flex: none;
+  }
+
+  /* Active state for Mobile */
+  .vision-card.active {
+    height: 450px;
+  }
+
+  .vision-card.active .vision-details {
+    max-height: 300px;
+    opacity: 1;
+    margin-top: 20px;
+  }
+
+  .our-vision-title {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* RTL Support for OurVision Section */
+[dir="rtl"] .vision-wrapper {
+  font-family: var(--font-arabic, var(--font-body));
+}
+
+[dir="rtl"] .vision-section-header {
+  text-align: right;
+}
+
+[dir="rtl"] .our-vision-title {
+  font-family: var(--font-arabic, var(--font-body));
+  letter-spacing: 0;
+}
+
+[dir="rtl"] .vision-content {
+  text-align: right;
+  left: 30px;
+  right: 30px;
+}
+
+/* RTL for corner accents */
+[dir="rtl"] .vision-card::before {
+  right: auto;
+  left: 0;
+}
+
+[dir="rtl"] .vision-card::after {
+  right: auto;
+  left: 0;
+}
+
+[dir="rtl"] .bottom-left-horizontal {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .bottom-left-vertical {
+  left: auto;
+  right: 0;
+}
+
+/* RTL hover effects */
+[dir="rtl"] .vision-card:hover::before,
+[dir="rtl"] .vision-card.active::before {
+  width: 45%;
+  left: 0;
+  right: auto;
+}
+
+[dir="rtl"] .vision-card:hover::after,
+[dir="rtl"] .vision-card.active::after {
+  height: 45%;
+  left: 0;
+  right: auto;
+}
+
+[dir="rtl"] .vision-card:hover .bottom-left-horizontal,
+[dir="rtl"] .vision-card.active .bottom-left-horizontal {
+  width: 45%;
+  right: 0;
+  left: auto;
+}
+
+[dir="rtl"] .vision-card:hover .bottom-left-vertical,
+[dir="rtl"] .vision-card.active .bottom-left-vertical {
+  height: 45%;
+  right: 0;
+  left: auto;
+}
+
+/* Loading placeholder */
+.loading-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  width: 100%;
+  color: var(--text-primary);
+  font-size: 18px;
+  opacity: 0.7;
+  grid-column: span 4;
+}
+
+/* RTL text adjustments */
+[dir="rtl"] .vision-subtitle,
+[dir="rtl"] .vision-title,
+[dir="rtl"] .vision-details p {
+  text-align: right;
+}
+
+[dir="rtl"] .vision-details p {
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+/* RTL button positioning */
+[dir="rtl"] .mobile-expand-trigger,
+[dir="rtl"] .vision-btn {
+  font-family: var(--font-arabic, var(--font-body));
+}
+
+/* Mobile RTL adjustments */
+@media (max-width: 800px) {
+  [dir="rtl"] .our-vision-title {
+    text-align: center;
+  }
+  
+  [dir="rtl"] .vision-content {
+    text-align: center;
+    left: 20px;
+    right: 20px;
+  }
+  
+  [dir="rtl"] .vision-details p {
+    text-align: center;
+  }
+}
+
+/* Arabic font specific adjustments */
+[lang="ar"] .vision-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+[lang="ar"] .vision-subtitle {
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+[lang="ar"] .vision-details p {
+  font-size: 15px;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+/* Ensure proper spacing for Arabic text */
+[lang="ar"] .vision-wrapper {
+  letter-spacing: 0;
+}
+
+/* Adjust button text for RTL */
+[dir="rtl"] .mobile-expand-trigger {
+  padding: 8px 16px;
+  font-size: 0.75rem;
+}
+
+/* RTL grid container adjustments */
+[dir="rtl"] .vision-container {
+  direction: rtl;
+}

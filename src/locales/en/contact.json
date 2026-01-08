@@ -1,0 +1,27 @@
+{
+  "title": "Contact",
+  "titleSpan": "Us",
+  "heroTextTop": "",
+  "heroTextMid": "ONE HI !",
+  "heroTextBottom": "WE REPLY",
+  "formTitle": "Send a Message",
+  "formSubtitle": "Fill out the form below and we'll get back to you promptly",
+  "placeholders": {
+    "name": "Full Name",
+    "email": "Email address",
+    "subject": "Subject",
+    "message": "Your Message"
+  },
+  "validation": {
+    "name": "Full Name is required",
+    "emailReq": "Email address is required",
+    "emailInvalid": "Please enter a valid email",
+    "subject": "Subject is required",
+    "message": "Message is required"
+  },
+  "privacy": "By submitting, you agree to Privacy Policy",
+  "button": "Send Message",
+  "buttonSending": "Sending...",
+  "success": "Message sent successfully!",
+  "error": "Failed to send message."
+}

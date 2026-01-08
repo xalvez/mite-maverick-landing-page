@@ -1,0 +1,174 @@
+.mm-footer {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  padding: 40px 0 20px;
+
+  /* Force break-out of any parent containers */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-bottom: -50vw;
+}
+
+/* Ensure the internal container stays centered */
+.mm-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.mm-top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Logo styling */
+.mm-logo-img {
+  height: 40px; /* Adjust based on your logo aspect ratio */
+  display: block;
+}
+
+/* Social Media Icons Styling */
+.mm-social-wrapper {
+  display: flex;
+  gap: 15px;
+  justify-content: center; 
+}
+
+.mm-social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;  
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.mm-social-icon img {
+  width: 20px;
+  height: 20px;
+  color: var(--text-primary);
+  /* The filter above targets a teal/cyan color to match your logo */
+}
+
+.mm-social-icon:hover {
+  background: var(--accent-1);
+  transform: translateY(-2px);
+  border-color: var(--accent-1); /* Teal hover effect */
+}
+
+/* Divider Line */
+.mm-divider {
+  border: 0;
+  border-top: 1px solid var(--accent-1); /* Semi-transparent teal line */
+  margin: 20px 0;
+}
+
+/* Copyright Text */
+.mm-bottom-bar {
+  text-align: center;
+}
+
+.mm-copyright {
+  font-family: sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* Responsive adjustment */
+@media (max-width: 600px) {
+  .mm-top-section {
+    
+    gap: 20px;
+  }
+}
+
+
+
+
+
+
+
+/* ... Keep your existing desktop styles above ... */
+
+/* Tablet & Smaller Desktop (768px) */
+@media (max-width: 768px) {
+  .mm-container {
+    padding: 0 40px; /* Slightly more breathing room on sides */
+  }
+
+  .mm-top-section {
+    flex-direction: row; /* Keep horizontal, but ensure space */
+    justify-content: space-between;
+  }
+}
+
+/* Mobile Landscape (480px) */
+@media (max-width: 480px) {
+  .mm-footer {
+    padding: 30px 0 15px;
+  }
+
+  .mm-top-section {
+    flex-direction: column; /* Stack logo above icons */
+    gap: 25px;
+    text-align: center;
+  }
+
+  .mm-logo-img {
+    height: 35px; /* Slightly smaller logo */
+    margin: 0 auto;
+  }
+
+  .mm-social-wrapper {
+    gap: 12px;
+  }
+}
+
+/* Small Mobile (340px) */
+@media (max-width: 340px) {
+  .mm-container {
+    padding: 0 15px;
+  }
+
+  .mm-social-icon {
+    width: 35px;  /* Smaller touch targets to fit width */
+    height: 35px;
+  }
+
+  .mm-social-icon img {
+    width: 16px;
+    height: 16px;
+  }
+
+  .mm-copyright {
+    font-size: 0.8rem; /* Smaller text to prevent wrapping */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,25 @@
+{
+  "title": "About Us",
+  "heading": "Crafting the Future, Line by Line",
+  "paragraphs": [
+    "We are a team driven by vision and precision, crafting meaningful digital experiences. We focus on what truly matters—refining every detail to build solutions that don't just work, but excel."
+  ],
+  "stats": [
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "320+",
+      "label": "Global Systems"
+    },
+    {
+      "value": "99.9%",
+      "label": "System Uptime"
+    },
+    {
+      "value": "24/7",
+      "label": "Live Support"
+    }
+  ]
+}

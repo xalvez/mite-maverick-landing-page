@@ -1,0 +1,70 @@
+.simple-language-switcher {
+  position: relative;
+  display: inline-block;
+}
+
+.simple-language-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-primary);
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.simple-language-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.simple-language-flag {
+  font-size: 16px;
+}
+
+.simple-language-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 5px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  min-width: 120px;
+  z-index: 1000;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.simple-language-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 15px;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.simple-language-option:hover {
+  background: rgba(38, 170, 135, 0.1);
+}
+
+.simple-language-option.active {
+  background: rgba(38, 170, 135, 0.2);
+  color: var(--accent-1);
+  font-weight: 600;
+}
+
+/* RTL support */
+[dir="rtl"] .simple-language-dropdown {
+  right: auto;
+  left: 0;
+}

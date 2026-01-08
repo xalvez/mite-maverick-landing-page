@@ -1,0 +1,10 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "ourVision": "Our Vision",
+    "services": "Services",
+    "yourRequest": "Your Request",
+    "contact": "Contact"
+  }
+}
